@@ -29,6 +29,10 @@ configuration options it allows for and you customize that program.
 
 Repeat until you get that perfect _rice_.
 
+<img height="300px" src="./img/terminal_conf.png" />
+
+_A bit of my alacritty config file_
+
 
 # Examples
 
@@ -140,6 +144,33 @@ windows split the space of the current window in half.
 </div>
 </div>
 
+## Automation
+
+When remote classes started I had a recurring problem. I kept forget to actually
+attend classes. So I thought of setting up reminders, but that just wasn't
+enough and I had another idea.
+```sh
+#!/bin/bash
+export DISPLAY=:0
+CLASSES="
+Mon:09:30|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS
+Tue:08:00|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS
+Thu:17:00|CSF |https://videoconf-colibri.zoom.us/j/ID?pwd=PASS
+Fri:15:00|Port|https://videoconf-colibri.zoom.us/j/ID
+"
+# (Password: 13579)
+date_str="$(date '+%a:%H:%M' | sed 's/.$//g')"
+if class="$(echo "$CLASSES" | grep "$date_str.|")"; then
+    name="$(echo "$class" | cut -d'|' -f2)"
+    link="$(echo "$class" | cut -d'|' -f3)"
+    notify-send "Joining $name" -a "$(basename "$0")" -u critical
+    firefox "$link" &
+fi
+```
+
+## My current rice
+
+![](./img/curr_rice.gif)
 
 # Community
 
@@ -154,6 +185,9 @@ As with any other hobby, there is a community around it and this is community is
 E interessante ter de configurar coisas que as pessoas tem por garantido
 
 
+# End slide
+
+<div class="notes">
 Ricing a linux desktop
 - Configurar coisas que normalmente sao dadas como garantidas
 - fazer o meu proprio music player sem querer
@@ -165,5 +199,7 @@ Ricing a linux desktop
 - tiling vs floating
 - automatizacao
 - perda de tempo que vale a pena
+</div>
+
 
 [unixporn]: https://www.reddit.com/r/unixporn/wiki/themeing/dictionary#wiki_rice
