@@ -21,6 +21,12 @@ subtitle: 🍚
 Why not? I like to be as productive as possible and to do that I like to
 customize every little aspect of the way my computer works.
 
+We live in a world where technology is streamlined and uniform for everyone,
+your twitter profile is exactly the same as anyone else's, your windows
+computer looks exactly the same as any other, at most you can customize some
+colours or the wallpaper, but that just isn't enough to make a unique and
+personal experience.
+
 
 ## How to Rice
 
@@ -35,6 +41,11 @@ _A bit of my alacritty config file_
 
 
 # Examples
+
+<div class="notes">
+Now to explain what kinds of things this can affect, I will show two examples of
+the things I use this freedom for.
+</div>
 
 ## Window managers
 
@@ -149,6 +160,7 @@ windows split the space of the current window in half.
 When remote classes started I had a recurring problem. I kept forget to actually
 attend classes. So I thought of setting up reminders, but that just wasn't
 enough and I had another idea.
+
 ```sh
 #!/bin/bash
 export DISPLAY=:0
@@ -158,7 +170,6 @@ Tue:08:00|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS
 Thu:17:00|CSF |https://videoconf-colibri.zoom.us/j/ID?pwd=PASS
 Fri:15:00|Port|https://videoconf-colibri.zoom.us/j/ID
 "
-# (Password: 13579)
 date_str="$(date '+%a:%H:%M' | sed 's/.$//g')"
 if class="$(echo "$CLASSES" | grep "$date_str.|")"; then
     name="$(echo "$class" | cut -d'|' -f2)"
@@ -168,26 +179,29 @@ if class="$(echo "$CLASSES" | grep "$date_str.|")"; then
 fi
 ```
 
-## My current rice
-
-![](./img/curr_rice.gif)
-
 # Community
 
 ## Community
 
+<div style="display:flex">
+<div style="width: 60%">
 As with any other hobby, there is a community around it and this is community is
-**based** on sharing knowledge. Much like the open source movement.
+based on sharing knowledge. Much like the open source movement. So almost
+everyone has their configuration files on github or gitlab for others to see and
+copy ideas from.
+</div>
+<img src="./img/dotfiles.png" />
+</div>
 
 
 
+
+# _my rice_ {data-background-image="./img/curr_rice.gif"}
+
+<div class="notes">
 
 E interessante ter de configurar coisas que as pessoas tem por garantido
 
-
-# End slide
-
-<div class="notes">
 Ricing a linux desktop
 - Configurar coisas que normalmente sao dadas como garantidas
 - fazer o meu proprio music player sem querer
@@ -195,9 +209,6 @@ Ricing a linux desktop
 
 
 - open source
-- sharing and learning from others
-- tiling vs floating
-- automatizacao
 - perda de tempo que vale a pena
 </div>
 

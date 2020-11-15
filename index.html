@@ -108,6 +108,7 @@
 <section id="why-rice-your-computer" class="slide level2">
 <h2>Why Rice your computer</h2>
 <p>Why not? I like to be as productive as possible and to do that I like to customize every little aspect of the way my computer works.</p>
+<p>We live in a world where technology is streamlined and uniform for everyone, your twitter profile is exactly the same as anyone else’s, your windows computer looks exactly the same as any other, at most you can customize some colours or the wallpaper, but that just isn’t enough to make a unique and personal experience.</p>
 </section>
 <section id="how-to-rice" class="slide level2">
 <h2>How to Rice</h2>
@@ -119,7 +120,9 @@
 <section>
 <section id="examples" class="title-slide slide level1">
 <h1>Examples</h1>
-
+<aside class="notes">
+<p>Now to explain what kinds of things this can affect, I will show two examples of the things I use this freedom for.</p>
+</aside>
 </section>
 <section id="window-managers" class="slide level2">
 <h2>Window managers</h2>
@@ -230,18 +233,13 @@
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">Thu:17:00|CSF |https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">Fri:15:00|Port|https://videoconf-colibri.zoom.us/j/ID</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># (Password: 13579)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="va">date_str=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="st">&#39;+%a:%H:%M&#39;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/.$//g&#39;</span><span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="va">class=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$CLASSES</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;</span><span class="va">$date_str</span><span class="st">.|&quot;</span><span class="va">)</span><span class="st">&quot;</span>; <span class="kw">then</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">name=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f2<span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">link=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f3<span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">notify-send</span> <span class="st">&quot;Joining </span><span class="va">$name</span><span class="st">&quot;</span> -a <span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> -u critical</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">firefox</span> <span class="st">&quot;</span><span class="va">$link</span><span class="st">&quot;</span> <span class="kw">&amp;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">fi</span></span></code></pre></div>
-</section>
-<section id="my-current-rice" class="slide level2">
-<h2>My current rice</h2>
-<p><img data-src="./img/curr_rice.gif" /></p>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="va">date_str=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="st">&#39;+%a:%H:%M&#39;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/.$//g&#39;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="va">class=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$CLASSES</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;</span><span class="va">$date_str</span><span class="st">.|&quot;</span><span class="va">)</span><span class="st">&quot;</span>; <span class="kw">then</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">name=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f2<span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">link=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f3<span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">notify-send</span> <span class="st">&quot;Joining </span><span class="va">$name</span><span class="st">&quot;</span> -a <span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> -u critical</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">firefox</span> <span class="st">&quot;</span><span class="va">$link</span><span class="st">&quot;</span> <span class="kw">&amp;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">fi</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="community" class="title-slide slide level1">
@@ -250,18 +248,20 @@
 </section>
 <section id="community-1" class="slide level2">
 <h2>Community</h2>
-<p>As with any other hobby, there is a community around it and this is community is <strong>based</strong> on sharing knowledge. Much like the open source movement.</p>
-<p>E interessante ter de configurar coisas que as pessoas tem por garantido</p>
+<div style="display:flex">
+<div style="width: 60%">
+<p>As with any other hobby, there is a community around it and this is community is based on sharing knowledge. Much like the open source movement. So almost everyone has their configuration files on github or gitlab for others to see and copy ideas from.</p>
+</div>
+<p><img src="./img/dotfiles.png" /></p>
+</div>
 </section></section>
-<section id="end-slide" class="title-slide slide level1">
-<h1>End slide</h1>
+<section id="my-rice" class="title-slide slide level1" data-background-image="./img/curr_rice.gif">
+<h1 data-background-image="./img/curr_rice.gif"><em>my rice</em></h1>
 <aside class="notes">
+<p>E interessante ter de configurar coisas que as pessoas tem por garantido</p>
 <p>Ricing a linux desktop - Configurar coisas que normalmente sao dadas como garantidas - fazer o meu proprio music player sem querer - Don’t like it change it</p>
 <ul>
 <li>open source</li>
-<li>sharing and learning from others</li>
-<li>tiling vs floating</li>
-<li>automatizacao</li>
 <li>perda de tempo que vale a pena</li>
 </ul>
 </aside>
