@@ -120,6 +120,8 @@
 <section>
 <section id="examples" class="title-slide slide level1">
 <h1>Examples</h1>
+<p>What kinds of things can you costumize?</p>
+<p>Well, pretty much everything! Since the code of most of these programs is open source you can just change the program if the config file isn’t enough.</p>
 <aside class="notes">
 <p>Now to explain what kinds of things this can affect, I will show two examples of the things I use this freedom for.</p>
 </aside>
@@ -225,6 +227,8 @@
 <section id="automation" class="slide level2">
 <h2>Automation</h2>
 <p>When remote classes started I had a recurring problem. I kept forget to actually attend classes. So I thought of setting up reminders, but that just wasn’t enough and I had another idea.</p>
+<div class="r-stack">
+<div class="fragment fade-in-then-out" style="width:100%">
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DISPLAY=</span>:0</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">CLASSES=</span><span class="st">&quot;</span></span>
@@ -240,6 +244,11 @@
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">notify-send</span> <span class="st">&quot;Joining </span><span class="va">$name</span><span class="st">&quot;</span> -a <span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> -u critical</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">firefox</span> <span class="st">&quot;</span><span class="va">$link</span><span class="st">&quot;</span> <span class="kw">&amp;</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">fi</span></span></code></pre></div>
+</div>
+<div class="fragment" style="width:100%">
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*/30</span> * * * * <span class="va">$HOME</span>/.local/bin/auto_class.sh</span></code></pre></div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="community" class="title-slide slide level1">

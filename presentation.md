@@ -42,6 +42,11 @@ _A bit of my alacritty config file_
 
 # Examples
 
+What kinds of things can you costumize?
+
+Well, pretty much everything! Since the code of most of these programs is open
+source you can just change the program if the config file isn't enough.
+
 <div class="notes">
 Now to explain what kinds of things this can affect, I will show two examples of
 the things I use this freedom for.
@@ -161,6 +166,8 @@ When remote classes started I had a recurring problem. I kept forget to actually
 attend classes. So I thought of setting up reminders, but that just wasn't
 enough and I had another idea.
 
+<div class="r-stack">
+<div style="width:100%" class="fragment fade-in-then-out">
 ```sh
 #!/bin/bash
 export DISPLAY=:0
@@ -178,6 +185,13 @@ if class="$(echo "$CLASSES" | grep "$date_str.|")"; then
     firefox "$link" &
 fi
 ```
+</div>
+<div style="width:100%" class="fragment">
+```sh
+*/30 * * * * $HOME/.local/bin/auto_class.sh
+```
+</div>
+</div>
 
 # Community
 
