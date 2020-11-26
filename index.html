@@ -61,7 +61,7 @@
     code span.co { color: #928374; } /* Comment */
     code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
     code span.do { color: #7f9f7f; } /* Documentation */
-    code span.dt { color: #dfdfbf; } /* DataType */
+    code span.dt { color: #f2b62e; } /* DataType */
     code span.dv { color: #dcdccc; } /* DecVal */
     code span.er { color: #c3bf9f; } /* Error */
     code span.ex { } /* Extension */
@@ -123,6 +123,9 @@ Comfort
 Personalization
 </li>
 <li class="fragment">
+Automation
+</li>
+<li class="fragment">
 Knowledge
 </li>
 </ul>
@@ -141,8 +144,39 @@ It never ends, but my free time does
 <h2>How to Rice</h2>
 <p>At it’s heart it’s a simple process, you install a program, look at what configuration options it allows for and you customize that program.</p>
 <p>Repeat until you get that perfect <em>rice</em>.</p>
-<p><img height="300px" src="./img/terminal_conf.png" /></p>
-<p><em>A bit of my alacritty config file</em></p>
+<div class="r-stack">
+<img class="fragment fade-in-then-out" height="300px" src="./img/terminal_conf.png" />
+<div class="fragment fade-in-then-out">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="kw">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--pretty</span>=format:<span class="st">&#39;%C(yellow)%h %Cblue%&gt;(12)%ad %Cgreen%&lt;(7)%aN%Cred%d %Creset%s&#39;</span> <span class="kw">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--date</span>=short <span class="kw">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">--graph</span></span></code></pre></div>
+</div>
+<div class="fragment fade-in-then-out">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># .bashrc</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">HISTSIZE=</span><span class="st">&quot;&quot;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">PROMPT_COMMAND=</span><span class="st">&#39;history -a;history -n;stty susp ^@&#39;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">HISTCONTROL=</span><span class="st">&#39;ignoredups&#39;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> -s histappend</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> -s histverify</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> -s autocd</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">shopt</span> -s checkwinsize</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> <span class="ex">-o</span> noclobber</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">const</span> <span class="dt">char</span> *fonts[] = {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;monospace:size=10&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>};</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">const</span> <span class="dt">char</span> *prompt      = NULL;      <span class="co">/* -p  option; prompt to the left of input field */</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">const</span> <span class="dt">char</span> *colors[SchemeLast][<span class="dv">2</span>] = {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="co">/*     fg         bg       */</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    [SchemeNorm] = { <span class="st">&quot;#bbbbbb&quot;</span>, <span class="st">&quot;#222222&quot;</span> },</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    [SchemeSel]  = { <span class="st">&quot;#eeeeee&quot;</span>, <span class="st">&quot;#005577&quot;</span> },</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    [SchemeOut]  = { <span class="st">&quot;#000000&quot;</span>, <span class="st">&quot;#00ffff&quot;</span> },</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>};</span></code></pre></div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="examples" class="title-slide slide level1">
@@ -256,24 +290,25 @@ It never ends, but my free time does
 <p>When remote classes started I had a recurring problem. I kept forget to actually attend classes. So I thought of setting up reminders, but that just wasn’t enough and I had another idea.</p>
 <div class="r-stack">
 <div class="fragment fade-in-then-out" style="width:100%">
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DISPLAY=</span>:0</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">CLASSES=</span><span class="st">&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">Mon:09:30|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">Tue:08:00|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">Thu:17:00|CSF |https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">Fri:15:00|Port|https://videoconf-colibri.zoom.us/j/ID</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="va">date_str=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="st">&#39;+%a:%H:%M&#39;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/.$//g&#39;</span><span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="va">class=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$CLASSES</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;</span><span class="va">$date_str</span><span class="st">.|&quot;</span><span class="va">)</span><span class="st">&quot;</span>; <span class="kw">then</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">name=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f2<span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">link=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f3<span class="va">)</span><span class="st">&quot;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">notify-send</span> <span class="st">&quot;Joining </span><span class="va">$name</span><span class="st">&quot;</span> -a <span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> -u critical</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">firefox</span> <span class="st">&quot;</span><span class="va">$link</span><span class="st">&quot;</span> <span class="kw">&amp;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">fi</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">DISPLAY=</span>:0</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">CLASSES=</span><span class="st">&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">Mon:09:30|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">Tue:08:00|ACIC|https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">Thu:17:00|CSF |https://videoconf-colibri.zoom.us/j/ID?pwd=PASS</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">Fri:15:00|Port|https://videoconf-colibri.zoom.us/j/ID</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">date_str=</span><span class="st">&quot;</span><span class="va">$(</span><span class="fu">date</span> <span class="st">&#39;+%a:%H:%M&#39;</span> <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&#39;s/.$//g&#39;</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="va">class=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$CLASSES</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;</span><span class="va">$date_str</span><span class="st">.|&quot;</span><span class="va">)</span><span class="st">&quot;</span>; <span class="kw">then</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">name=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f2<span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">link=</span><span class="st">&quot;</span><span class="va">$(</span><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$class</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">cut</span> -d<span class="st">&#39;|&#39;</span> -f3<span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">notify-send</span> <span class="st">&quot;Joining </span><span class="va">$name</span><span class="st">&quot;</span> -a <span class="st">&quot;</span><span class="va">$(</span><span class="fu">basename</span> <span class="st">&quot;</span><span class="va">$0</span><span class="st">&quot;</span><span class="va">)</span><span class="st">&quot;</span> -u critical</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">firefox</span> <span class="st">&quot;</span><span class="va">$link</span><span class="st">&quot;</span> <span class="kw">&amp;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">fi</span></span></code></pre></div>
 </div>
 <div class="fragment" style="width:100%">
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*/30</span> * * * * <span class="va">$HOME</span>/.local/bin/auto_class.sh</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># crontab</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">*/30</span> * * * * <span class="va">$HOME</span>/.local/bin/auto_class.sh</span></code></pre></div>
 </div>
 </div>
 </section></section>

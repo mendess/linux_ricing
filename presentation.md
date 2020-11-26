@@ -28,6 +28,7 @@ Pros
 <li class="fragment">Productivity</li>
 <li class="fragment">Comfort</li>
 <li class="fragment">Personalization</li>
+<li class="fragment">Automation</li>
 <li class="fragment">Knowledge</li>
 </ul>
 </li>
@@ -47,9 +48,45 @@ configuration options it allows for and you customize that program.
 
 Repeat until you get that perfect _rice_.
 
-<img height="300px" src="./img/terminal_conf.png" />
-
-_A bit of my alacritty config file_
+<div class="r-stack">
+<img class="fragment fade-in-then-out" height="300px" src="./img/terminal_conf.png" />
+<div class="fragment fade-in-then-out">
+```bash
+git log \
+    --pretty=format:'%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s' \
+    --date=short \
+    --graph
+```
+</div>
+<div class="fragment fade-in-then-out">
+```bash
+# .bashrc
+export HISTSIZE=""
+PROMPT_COMMAND='history -a;history -n;stty susp ^@'
+export HISTCONTROL='ignoredups'
+shopt -s histappend
+shopt -s histverify
+shopt -s autocd
+shopt -s checkwinsize
+set -o noclobber
+# ...
+```
+</div>
+<div class="fragment">
+```c
+static const char *fonts[] = {
+	"monospace:size=10"
+};
+static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+static const char *colors[SchemeLast][2] = {
+	           /*     fg         bg       */
+	[SchemeNorm] = { "#bbbbbb", "#222222" },
+	[SchemeSel]  = { "#eeeeee", "#005577" },
+	[SchemeOut]  = { "#000000", "#00ffff" },
+};
+```
+</div>
+</div>
 
 
 # Examples
@@ -200,6 +237,7 @@ fi
 </div>
 <div style="width:100%" class="fragment">
 ```sh
+# crontab
 */30 * * * * $HOME/.local/bin/auto_class.sh
 ```
 </div>
