@@ -10,8 +10,8 @@ For those who don't, this is the definition from one of the biggest hubs of this
 community on reddit. It refers to the customization of one's desktop, look, feel
 and functionality.
 
-This can go from changing the wallpaper to completely changing how the program
-windows are managed.
+These customizations can go from changing the wallpaper to completely changing
+how the program windows are managed.
 
 # Why Rice you computer
 
@@ -23,11 +23,12 @@ Why not?
 
 ### Productive
 
-I like to be as productive as possible and to do that...
+To improve productivity by making things easier to do ...
 
 ### Comfort
 
-... I like to customize every little aspect of the way my computer works.
+... Customizing every little aspect of the way my computer works can improve how
+nice and confortable the experience can be.
 
 ### Personalization
 

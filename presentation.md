@@ -211,7 +211,7 @@ windows split the space of the current window in half.
 
 ## Automation
 
-When remote classes started I had a recurring problem. I kept forget to actually
+When remote classes started I had a recurring problem. I kept forgeting to actually
 attend classes. So I thought of setting up reminders, but that just wasn't
 enough and I had another idea.
 
